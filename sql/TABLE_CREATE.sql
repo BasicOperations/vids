@@ -1,0 +1,45 @@
+
+/*ALTER TABLE Media DROP FOREIGN KEY media_ibfk_1;
+ALTER TABLE MediaList DROP FOREIGN KEY medialist_ibfk_1;
+ALTER TABLE MediaList DROP FOREIGN KEY medialist_ibfk_2;
+ALTER TABLE StorageMedia DROP FOREIGN KEY storagemedia_ibfk_1;
+
+
+DROP TABLE MediaShortcuts;
+DROP TABLE Media;
+DROP TABLE MediaList;
+DROP TABLE StorageMedia; */
+
+CREATE TABLE MediaShortcuts(
+Shortcut VARCHAR(255) PRIMARY KEY
+);
+
+CREATE TABLE Media(
+ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+Titel VARCHAR(255),
+Description VARCHAR(255),
+FSK INT(2),
+MediaList INT(6)
+);
+
+CREATE TABLE MediaList(
+ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+MediaID INT(6),
+StorageMediaID INT(6)
+);
+
+CREATE TABLE StorageMedia(
+ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+StorageShortcut VARCHAR(255),
+Title VARCHAR(255)
+);
+
+ALTER TABLE StorageMedia
+	ADD FOREIGN KEY(StorageShortcut) REFERENCES MediaShortcuts(Shortcut);
+
+ALTER TABLE MediaList
+	ADD FOREIGN KEY (MediaID) REFERENCES Media(ID),
+    ADD FOREIGN KEY(StorageMediaID) REFERENCES StorageMedia(ID);
+    
+ALTER TABLE Media
+	ADD FOREIGN KEY(MediaList) REFERENCES MediaList(ID);
