@@ -1,20 +1,21 @@
 
-/*ALTER TABLE Media DROP FOREIGN KEY media_ibfk_1;
-ALTER TABLE MediaList DROP FOREIGN KEY medialist_ibfk_1;
-ALTER TABLE MediaList DROP FOREIGN KEY medialist_ibfk_2;
-ALTER TABLE StorageMedia DROP FOREIGN KEY storagemedia_ibfk_1;
+ALTER TABLE V_Media DROP FOREIGN KEY v_media_ibfk_1;
+ALTER TABLE V_MediaList DROP FOREIGN KEY v_medialist_ibfk_1;
+ALTER TABLE V_MediaList DROP FOREIGN KEY v_medialist_ibfk_2;
+ALTER TABLE V_StorageMedia DROP FOREIGN KEY v_storagemedia_ibfk_1;
 
 
-DROP TABLE MediaShortcuts;
-DROP TABLE Media;
-DROP TABLE MediaList;
-DROP TABLE StorageMedia; */
+DROP TABLE V_MediaShortcuts;
+DROP TABLE V_Media;
+DROP TABLE V_MediaList;
+DROP TABLE V_StorageMedia;
+DROP TABLE V_User;
 
-CREATE TABLE MediaShortcuts(
+CREATE TABLE V_MediaShortcuts(
 Shortcut VARCHAR(255) PRIMARY KEY
 );
 
-CREATE TABLE Media(
+CREATE TABLE V_Media(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
 Titel VARCHAR(255),
 Description VARCHAR(255),
@@ -22,24 +23,32 @@ FSK INT(2),
 MediaList INT(6)
 );
 
-CREATE TABLE MediaList(
+CREATE TABLE V_MediaList(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
 MediaID INT(6),
 StorageMediaID INT(6)
 );
 
-CREATE TABLE StorageMedia(
+CREATE TABLE V_StorageMedia(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
 StorageShortcut VARCHAR(255),
 Title VARCHAR(255)
 );
 
-ALTER TABLE StorageMedia
-	ADD FOREIGN KEY(StorageShortcut) REFERENCES MediaShortcuts(Shortcut);
+CREATE TABLE V_User(
+ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+EMail VARCHAR(255),
+FirstName VARCHAR(255),
+LastName VARCHAR(255),
+DateOfBirth DATE
+);
 
-ALTER TABLE MediaList
-	ADD FOREIGN KEY (MediaID) REFERENCES Media(ID),
-    ADD FOREIGN KEY(StorageMediaID) REFERENCES StorageMedia(ID);
+ALTER TABLE V_StorageMedia
+	ADD FOREIGN KEY(StorageShortcut) REFERENCES V_MediaShortcuts(Shortcut);
+
+ALTER TABLE V_MediaList
+	ADD FOREIGN KEY (MediaID) REFERENCES V_Media(ID),
+    ADD FOREIGN KEY(StorageMediaID) REFERENCES V_StorageMedia(ID);
     
-ALTER TABLE Media
-	ADD FOREIGN KEY(MediaList) REFERENCES MediaList(ID);
+ALTER TABLE V_Media
+	ADD FOREIGN KEY(MediaList) REFERENCES V_MediaList(ID);
