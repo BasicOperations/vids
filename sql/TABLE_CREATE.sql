@@ -17,8 +17,9 @@ Shortcut VARCHAR(255) PRIMARY KEY
 
 CREATE TABLE V_Media(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
-Titel VARCHAR(255),
+Title VARCHAR(255),
 Description VARCHAR(255),
+Image VARCHAR(255),
 FSK INT(2),
 MediaList INT(6)
 );
@@ -26,7 +27,9 @@ MediaList INT(6)
 CREATE TABLE V_MediaList(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
 MediaID INT(6),
-StorageMediaID INT(6)
+StorageMediaID INT(6),
+RentedFrom DATE,
+RentedTo DATE
 );
 
 CREATE TABLE V_StorageMedia(
