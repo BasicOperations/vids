@@ -1,86 +1,130 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<!--Modifiziertes Theme-->
-	<link rel="stylesheet" href="css/stylesheet.css">
-	<!--Powertip Plugin-->
-	<link rel="stylesheet" href="css/jquery.powertip.css">
-	<meta name="author" content="Hendrik Toelstede">
-	<title>Registrieren</title>
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<!--Modifiziertes Theme-->
+<link rel="stylesheet" href="css/stylesheet.css">
+<!--Powertip Plugin-->
+<link rel="stylesheet" href="css/jquery.powertip.css">
+<meta name="author" content="Hendrik Toelstede">
+<title>Registrieren</title>
 </head>
 <body>
-<div class="container">
-	<header class="page-header">
-		<h1>VI/DS
-			<small>Video Info/Data Service</small>
-		</h1>
-	</header>
-	<form role="form" class="form-horizontal" method="post" action="formular.do">
-		<div class="form-group has-error">
-			<label for="inputName" class="control-label col-xs-3">Vor- und Nachname</label>
-			<div class="col-xs-9">
-				<input type="text" name="name" id="inputName" placeholder="Vorname Nachname" class="form-control"
-					   required="required" autofocus title="Zum Beispiel: Max Mustermann oder Max Jonas Mustermann"
-					   pattern="(([A-Z]{1})([a-zäöüß]+)\s)+([A-Z]{1})([a-zäöüß])+"/>
+	<div class="container">
+		<header class="page-header">
+			<h1>
+				VI/DS <small>Video Info/Data Service</small>
+			</h1>
+		</header>
+		<form role="form" class="form-horizontal" method="post"
+			action="formular.do">
+			<div class="form-group has-error">
+				<label for="inputEmail" class="control-label col-xs-2">Email</label>
+				<div class="col-xs-10">
+					<input type="email" name="email" id="inputEmail"
+						placeholder="EMail" class="form-control" required="required"
+						title="Geben Sie hier Ihre gültige E-Mail ein.">
+				</div>
 			</div>
-		</div>
-		<div class="form-group has-error">
-			<label for="inputPLZ" class="control-label col-xs-3">Postleitzahl</label>
-			<div class="col-xs-4">
-				<input type="text" name="plz" id="inputPLZ" placeholder="PLZ"
-					   class="form-control"
-					   required="required" title="Zum Beispiel: 51234" pattern="[0-9]{5}"/>
+			<div class="form-group has-error">
+				<label for="inputPassword" class="control-label col-xs-2">Passwort</label>
+				<div class="col-xs-10">
+					<input type="password" name="password" id="inputPW"
+						placeholder="Ihr Passwort" class="form-control"
+						required="required" title="Geben Sie hier Ihr Passwort ein">
+				</div>
 			</div>
-			<label for="inputOrt" class="control-label col-xs-2">Wohnort</label>
+			<div class="form-group has-error">
+				<label for="confirmPassword" class="control-label col-xs-2">Passwort
+					bestätigen</label>
+				<div class="col-xs-10">
+					<input type="password" name="password" id="confirmPW"
+						placeholder="Bitte nochmal eingeben" class="form-control"
+						required="required"
+						title="Geben Sie hier nochmals Ihr Passwort ein">
+				</div>
+			</div>
+			<div class="form-group has-error">
+				<label for="inputName" class="control-label col-xs-2">Vorname</label>
+				<div class="col-xs-4">
+					<input type="text" name="vorname" id="inputVorname"
+						placeholder="Vorname" class="form-control" required="required"
+						autofocus title="Zum Beispiel: Max oder Max Jonas"
+						pattern="(([A-Z]{1})([a-zäöüß]+)\s)+" />
+				</div>
+				<label for="inputName" class="control-label col-xs-2">Nachname</label>
+				<div class="col-xs-4">
+					<input type="text" name="nachname" id="inputNachname"
+						placeholder="Vorname" class="form-control" required="required"
+						autofocus title="Zum Beispiel: Musterman oder Sterling Müller"
+						pattern="(([A-Z]{1})([a-zäöüß]+)\s)+" />
+				</div>
+			</div>
+			<div class="form-group has-error">
+				<label for="inputStraße" class="control-label col-xs-2">Straße</label>
+				<div class="col-xs-4">
+					<input type="text" name="street" id="inputStreet"
+						placeholder="Ihre Straße" class="form-control" required="required"
+						title="Bitte geben Sie hier Ihre Straße ein">
+				</div>
+				<label for="inputHausnr" class="control-label col-xs-2">Hausnr.</label>
+				<div class="col-xs-4">
+					<input type="text" name="hausnr" id="inputHausnr"
+						placeholder="z.B. 5a" class="form-control" required="required"
+						title="Bitte geben Sie hier Ihre Hausnummer ein">
+				</div>
+			</div>
+			<div class="form-group has-error">
+				<label for="inputPLZ" class="control-label col-xs-2">Postleitzahl</label>
+				<div class="col-xs-4">
+					<input type="text" name="plz" id="inputPLZ" placeholder="PLZ"
+						class="form-control" required="required"
+						title="Zum Beispiel: 51234" pattern="[0-9]{5}" />
+				</div>
+				<label for="inputOrt" class="control-label col-xs-2">Wohnort</label>
 
-			<div class="col-xs-3">
-				<input type="text" name="wohnort" id="inputOrt" placeholder="Wohnort" class="form-control"
-					   required="required" title="Geben Sie Ihren aktuellen Wohnort ein" pattern="[A-z]+"/>
+				<div class="col-xs-4">
+					<input type="text" name="wohnort" id="inputOrt"
+						placeholder="Wohnort" class="form-control" required="required"
+						title="Geben Sie Ihren aktuellen Wohnort ein" pattern="[A-z]+" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputTelephone" class="control-label col-xs-3">Telefonnummer</label>
+			<div class="form-group">
+				<label for="inputTelephone" class="control-label col-xs-2">Telefonnummer</label>
 
-			<div class="col-xs-9">
-				<input type="tel" name="telephone" id="inputTelephone" placeholder="02761/123456" class="form-control"
-					   title="Geben Sie hier Ihre Telefonnummer ein, über die Sie tagsüber ereichbar sind."
-					   pattern="(\+\d+)?\s*([/–-]?\d+)+"/>
+				<div class="col-xs-10">
+					<input type="tel" name="telephone" id="inputTelephone"
+						placeholder="02761/123456" class="form-control"
+						title="Geben Sie hier Ihre Telefonnummer ein, über die Sie tagsüber ereichbar sind."
+						pattern="(\+\d+)?\s*([/–-]?\d+)+" />
+				</div>
 			</div>
-		</div>
-		<div class="form-group has-error">
-			<label for="inputEmail" class="control-label col-xs-3">Email</label>
-			<div class="col-xs-9">
-				<input type="email" name="email" id="inputEmail" placeholder="EMail" class="form-control" required="required"
-					   title="Geben Sie hier Ihre gültige E-Mail ein.">
+			<div class="col-xs-offset-2 col-xs-10">Rot umrandete Felder
+				sind verpflichtend</div>
+			<hr>
+			<div class="form-group">
+				<div class="col-xs-offset-2 col-xs-10">
+					<button type="submit" class="btn btn-primary">Registrierung
+						abschicken</button>
+					<button type="reset" id="reset" class="btn btn-default">Reset</button>
+				</div>
 			</div>
-		</div>
-		<div class="col-xs-offset-3 col-xs-9">
-				Rot umrandete Felder sind verpflichtend
-		</div>
-		<hr>
-		<div class="form-group">
-			<div class="col-xs-offset-3 col-xs-9">
-				<button type="submit" class="btn btn-primary">Registrierung abschicken</button>
-				<button type="reset" id="reset" class="btn btn-default">Reset</button>
-			</div>
-		</div>
-	</form>
-	<footer class="navbar-fixed-bottom">
-		<ul class="links muted">
-			<li><a href=""TODO"">Zurück zur Übersicht</a></li>
-			<li>&middot;</li>
-			<li><a href="mailto:TODO?subject=Kontakt">Kontakt</a></li>
-			<li>&middot;</li>
-			<li><a href="TODO">Impressum</a></li>
-		</ul>
-	</footer>
-</div>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.js"></script>
+		</form>
+		<footer class="navbar-fixed-bottom">
+			<ul class="links muted">
+				<li><a href="TODO">Zurück zur Übersicht</a></li>
+				<li>&middot;</li>
+				<li><a href="mailto:TODO?subject=Kontakt">Kontakt</a></li>
+				<li>&middot;</li>
+				<li><a href="TODO">Impressum</a></li>
+			</ul>
+		</footer>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.powertip.js"></script>
 </body>
 </html>
