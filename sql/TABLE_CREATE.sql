@@ -1,8 +1,8 @@
 
-ALTER TABLE V_Media DROP FOREIGN KEY v_media_ibfk_1;
 ALTER TABLE V_MediaList DROP FOREIGN KEY v_medialist_ibfk_1;
 ALTER TABLE V_MediaList DROP FOREIGN KEY v_medialist_ibfk_2;
 ALTER TABLE V_StorageMedia DROP FOREIGN KEY v_storagemedia_ibfk_1;
+ALTER TABLE V_Media DROP FOREIGN KEY v_media_ibfk_1;
 
 
 DROP TABLE V_MediaShortcuts;
@@ -10,15 +10,22 @@ DROP TABLE V_Media;
 DROP TABLE V_MediaList;
 DROP TABLE V_StorageMedia;
 DROP TABLE V_User;
+DROP TABLE V_StorageList;
+DROP TABLE V_Type;
 
 CREATE TABLE V_MediaShortcuts(
 Shortcut VARCHAR(255) PRIMARY KEY
 );
 
+CREATE TABLE V_Type(
+V_Type VARCHAR(255) PRIMARY KEY
+);
+
 CREATE TABLE V_Media(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+V_Type VARCHAR(255),
 Title VARCHAR(255),
-Description VARCHAR(255),
+Description MEDIUMTEXT,
 Image VARCHAR(255),
 FSK INT(2),
 MediaList INT(6)
@@ -27,9 +34,15 @@ MediaList INT(6)
 CREATE TABLE V_MediaList(
 ID INT(6) AUTO_INCREMENT PRIMARY KEY,
 MediaID INT(6),
-StorageMediaID INT(6),
+StorageListID INT(6),
 RentedFrom DATE,
 RentedTo DATE
+);
+
+CREATE TABLE V_StorageList(
+ID INT(6) AUTO_INCREMENT PRIMARY KEY,
+MediaID INT(6),
+StorageMediaID INT(6)
 );
 
 CREATE TABLE V_StorageMedia(
@@ -48,10 +61,11 @@ DateOfBirth DATE
 
 ALTER TABLE V_StorageMedia
 	ADD FOREIGN KEY(StorageShortcut) REFERENCES V_MediaShortcuts(Shortcut);
+    
+ALTER TABLE V_Media
+	ADD FOREIGN KEY(V_Type) REFERENCES V_Type(V_Type);
 
 ALTER TABLE V_MediaList
 	ADD FOREIGN KEY (MediaID) REFERENCES V_Media(ID),
-    ADD FOREIGN KEY(StorageMediaID) REFERENCES V_StorageMedia(ID);
+    ADD FOREIGN KEY(StorageListID) REFERENCES V_StorageList(ID);
     
-ALTER TABLE V_Media
-	ADD FOREIGN KEY(MediaList) REFERENCES V_MediaList(ID);

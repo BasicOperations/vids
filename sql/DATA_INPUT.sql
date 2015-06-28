@@ -5,10 +5,16 @@ INSERT INTO V_MediaShortcuts (Shortcut)
 	VALUES('DVD');
 INSERT INTO V_MediaShortcuts (Shortcut)
 	VALUES('BluRay');
+INSERT INTO V_Type (V_Type)
+	VALUES('Game');
+INSERT INTO V_Type (V_Type)
+	VALUES('Movie');
+INSERT INTO V_Type (V_Type)
+	VALUES('Series');
 
 /*_____________________________________________MOVIES_______________________________________________*/
 
-	INSERT INTO V_Media (Title,Description,Image,FSK,MediaList)
+	INSERT INTO V_Media (Title,Description,Image,FSK,MediaList,V_Type)
 	VALUES('Armageddon',
 		   'Ein Asteroid von enormer Größe rast mit einer Geschwindigkeit 
            von 40.000 Stundenkilometern auf die Erde zu. Ein Aufprall würde 
@@ -21,7 +27,8 @@ INSERT INTO V_MediaShortcuts (Shortcut)
            Ende... dem Armageddon?',
 			null,
             12,
-            1);
+            1,
+            'Movie');
     
     INSERT INTO V_StorageMedia (StorageShortcut,Title)
 	VALUES('BluRay','Armageddon');
@@ -34,7 +41,7 @@ INSERT INTO V_MediaShortcuts (Shortcut)
     
     
     
-    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList)
+    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList,V_Type)
 	VALUES('Star Trek',
 		   'Der dreiste James Kirk und der ebenso junge Halbvulkanier 
            Spock sind unter den Mitgliedern einer Sternenflotten-Besatzung 
@@ -44,7 +51,8 @@ INSERT INTO V_MediaShortcuts (Shortcut)
            bedroht. ',
 			null,
             12,
-            2);
+            2,
+            'Movie');
     
     INSERT INTO V_StorageMedia (StorageShortcut,Title)
 	VALUES('BluRay','Star Trek');
@@ -57,7 +65,7 @@ INSERT INTO V_MediaShortcuts (Shortcut)
     
     
     
-    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList)
+    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList,V_Type)
 	VALUES('Harry Potter - Complete Collection',
 		   'Harry Potter ist eine populäre Fantasy-Romanreihe der 
            englischen Schriftstellerin Joanne K. Rowling. Erzählt wird die 
@@ -68,7 +76,8 @@ INSERT INTO V_MediaShortcuts (Shortcut)
            Lebensjahr von Harry Potter, beginnend kurz vor seinem elften Geburtstag.',
 			null,
             12,
-            3);
+            3,
+            'Movie');
     
     INSERT INTO V_StorageMedia (StorageShortcut,Title)
 	VALUES('BluRay','Harry Potter - Complete Collection - Disc 1');
@@ -137,7 +146,7 @@ INSERT INTO V_MediaShortcuts (Shortcut)
 	VALUES(3,3,null, null);
     
     
-    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList)
+    INSERT INTO V_Media (Title,Description,Image,FSK,MediaList,V_Type)
 	VALUES('Pirates of the Caribbean - Die Piraten-Quadrologie',
 		   'Pirates of the Caribbean (englisch für Piraten der Karibik), 
            oder alternativ auch Fluch der Karibik genannt, ist eine Piratenfilmreihe 
@@ -148,7 +157,8 @@ INSERT INTO V_MediaShortcuts (Shortcut)
            der Filme beträgt ca. 580 Minuten.',
            null,
             12,
-            4);
+            4,
+            'Movie');
     
     INSERT INTO V_StorageMedia (StorageShortcut,Title)
 	VALUES('BluRay','Pirates of the Caribbean - Die Piraten-Quadrologie - Disc 1');
@@ -201,6 +211,8 @@ INSERT INTO V_MediaShortcuts (Shortcut)
     
     INSERT INTO V_MediaList (MediaID,StorageListID,RentedFrom,RentedTo)
 	VALUES(4,4,null, null);
+    
+    /*_____________________________________________GAMES_______________________________________________*/
     
    
 
