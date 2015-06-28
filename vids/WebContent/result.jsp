@@ -27,7 +27,7 @@
 				VI/DS <small>Video Info/Data Service</small>
 			</h1>
 		</header>
-		<form role="form" method="get" action="filter.do">
+		<form role="form" method="get" action="filter">
 			<div class="row">
 				<div class="col-xs-3">
 					Typ:
