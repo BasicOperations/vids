@@ -32,7 +32,7 @@
 				<div class="col-xs-3">
 					Typ:
 					<div class="dropdown">
-						<select id="Typ">
+						<select name="Typ">
 							<option value="all" selected="selected">Alle</option>
 							<option value="movie">Filme</option>
 							<option value="series">Serien</option>
@@ -43,7 +43,7 @@
 				<div class="col-xs-3">
 					FSK:
 					<div class="dropdown">
-						<select id="FSK">
+						<select name="FSK">
 							<option value="0" selected="selected">Alle</option>
 							<option value="12">12</option>
 							<option value="16">16</option>
@@ -54,17 +54,17 @@
 				<div class="col-xs-3">
 					Medium:
 					<div class="dropdown">
-						<select id="Medium">
+						<select name="Medium">
 							<option value="all" selected="selected">Alle</option>
-							<option value="12">Blueray</option>
-							<option value="16">DVD</option>
+							<option value="Blueray">Blueray</option>
+							<option value="DVD">DVD</option>
 						</select>
 					</div>
 				</div>
 				<div class="col-xs-3">
 					Name:
 					<div>
-						<input type="text" name="name" id="inputName"
+						<input type="text" name="Name" id="inputName"
 							placeholder="Suchen Sie einen Titel">
 					</div>
 				</div>
