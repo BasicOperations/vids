@@ -21,7 +21,7 @@
 			</h1>
 		</header>
 		<form role="form" class="form-horizontal" method="post"
-			action="formular.do">
+			action="formular.do" onSubmit="return pwCheck()">
 			<div class="form-group has-error">
 				<label for="inputEmail" class="control-label col-xs-2">Email</label>
 				<div class="col-xs-10">
@@ -33,7 +33,7 @@
 			<div class="form-group has-error">
 				<label for="inputPassword" class="control-label col-xs-2">Passwort</label>
 				<div class="col-xs-10">
-					<input type="password" name="password" id="inputPW"
+					<input type="password" name="password1" id="inputPW"
 						placeholder="Ihr Passwort" class="form-control"
 						required="required" title="Geben Sie hier Ihr Passwort ein">
 				</div>
@@ -42,10 +42,11 @@
 				<label for="confirmPassword" class="control-label col-xs-2">Passwort
 					bestätigen</label>
 				<div class="col-xs-10">
-					<input type="password" name="password" id="confirmPW"
+					<input type="password" name="password2" id="confirmPW"
 						placeholder="Bitte nochmal eingeben" class="form-control"
 						required="required"
-						title="Geben Sie hier nochmals Ihr Passwort ein">
+						title="Geben Sie hier nochmals Ihr Passwort ein"> <span
+						id="pwerror"></span>
 				</div>
 			</div>
 			<div class="form-group has-error">
@@ -53,15 +54,13 @@
 				<div class="col-xs-4">
 					<input type="text" name="vorname" id="inputVorname"
 						placeholder="Vorname" class="form-control" required="required"
-						autofocus title="Zum Beispiel: Max oder Max Jonas"
-						pattern="(([A-Z]{1})([a-zäöüß]+)\s)+" />
+						autofocus title="Zum Beispiel: Max oder Max Jonas" />
 				</div>
 				<label for="inputName" class="control-label col-xs-2">Nachname</label>
 				<div class="col-xs-4">
 					<input type="text" name="nachname" id="inputNachname"
 						placeholder="Vorname" class="form-control" required="required"
-						autofocus title="Zum Beispiel: Musterman oder Sterling Müller"
-						pattern="(([A-Z]{1})([a-zäöüß]+)\s)+" />
+						autofocus title="Zum Beispiel: Musterman oder Sterling Müller" />
 				</div>
 			</div>
 			<div class="form-group has-error">
@@ -126,5 +125,6 @@
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.powertip.js"></script>
+	<script src="js/pwcheck.js"></script>
 </body>
 </html>
