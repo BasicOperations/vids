@@ -78,6 +78,22 @@
 		<hr>
 	</div>
 	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Titel</th>
+					<th>Beschreibung</th>
+					<th>FSK</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
 		<footer class="navbar-fixed-bottom">
 			<ul class="links muted">
 				<li><a href=index.html>Zurück zur Übersicht</a></li>
