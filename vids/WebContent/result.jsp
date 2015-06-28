@@ -1,6 +1,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@page import ="beans.Medium" %>
+<%@page import ="view.View" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,6 +17,14 @@
 <title>Ergebnis!</title>
 </head>
 <body>
+
+	<%
+		
+		View v = (View)request.getAttribute("View");
+		out.write(v.printMedium());
+		
+	
+	%>
 	<div class="container">
 		<header class="page-header">
 			<h1>

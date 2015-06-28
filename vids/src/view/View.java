@@ -8,4 +8,11 @@ public class View {
 	public View(Filter filter, LinkedList<Medium> mediaList){
 		filteredList = mediaList;
 	}
+	
+	public String printMedium(){
+		
+		
+		return filteredList.get(1).getTitle();
+	}
+	
 }
