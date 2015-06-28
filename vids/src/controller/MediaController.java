@@ -1,11 +1,10 @@
-package logic;
+package controller;
 
 import java.util.*;
 
-import database.*;
 import beans.*;
 
-public class MediaController {
+public class MediaController extends Controller{
 	
 	private LinkedList<Medium> MediaList;
 	private DatabaseController databaseController;
