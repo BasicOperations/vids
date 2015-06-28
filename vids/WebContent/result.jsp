@@ -44,7 +44,7 @@
 					FSK:
 					<div class="dropdown">
 						<select id="FSK">
-							<option value="all" selected="selected">Alle</option>
+							<option value="0" selected="selected">Alle</option>
 							<option value="12">12</option>
 							<option value="16">16</option>
 							<option value="18">18</option>
