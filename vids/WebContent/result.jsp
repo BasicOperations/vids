@@ -82,8 +82,8 @@
 				<tr>
 					<th>ID</th>
 					<th>Titel</th>
-					<th>Beschreibung</th>
 					<th>FSK</th>
+					<th>Typ</th>
 				</tr>
 			</thead>
 			<tbody>
