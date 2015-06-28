@@ -76,10 +76,6 @@
 		</form>
 		<hr>
 	</div>
-	<%
-	
-		out.write(v.printAllMedia(false));
-	%>
 	<div class="container">
 		<footer class="navbar-fixed-bottom">
 			<ul class="links muted">

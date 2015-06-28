@@ -42,7 +42,6 @@ public class ViewController extends HttpServlet {
 		RequestDispatcher view;
 		view = request.getRequestDispatcher("result.jsp");
 		view.forward(request, response);
-		System.out.println(request.getParameter("name"));
 	}
 
 	/**
