@@ -6,8 +6,14 @@ import beans.*;
 
 public class MediaController extends Controller{
 	
-	private LinkedList<Medium> MediaList;
 	private DatabaseController databaseController;
+	private LinkedList<Medium> mediaList;
 	
-
+	public MediaController(){
+		
+		this.databaseController = new DatabaseController();
+		databaseController.createMediaList();
+		mediaList = databaseController.getMediaList();
+		System.out.println(databaseController.printMediaList());
+	}
 }

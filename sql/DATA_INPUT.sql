@@ -6,7 +6,9 @@ INSERT INTO V_MediaShortcuts (Shortcut)
 INSERT INTO V_MediaShortcuts (Shortcut)
 	VALUES('BluRay');
 INSERT INTO V_Type (V_Type)
-	VALUES('Game');
+	VALUES('Playstation 3');
+INSERT INTO V_Type (V_Type)
+	VALUES('XBox 360');
 INSERT INTO V_Type (V_Type)
 	VALUES('Movie');
 INSERT INTO V_Type (V_Type)
@@ -139,9 +141,6 @@ INSERT INTO V_Type (V_Type)
     INSERT INTO V_StorageList (MediaID,StorageMediaID)
 	VALUES(3,12);
     
-    INSERT INTO V_StorageList (MediaID,StorageMediaID)
-	VALUES(3,13);
-    
     INSERT INTO V_MediaList (MediaID,StorageListID,RentedFrom,RentedTo)
 	VALUES(3,3,null, null);
     
@@ -186,6 +185,9 @@ INSERT INTO V_Type (V_Type)
 
 
 	INSERT INTO V_StorageList (MediaID,StorageMediaID)
+	VALUES(4,13);
+    
+    INSERT INTO V_StorageList (MediaID,StorageMediaID)
 	VALUES(4,14);
     
     INSERT INTO V_StorageList (MediaID,StorageMediaID)
@@ -206,15 +208,35 @@ INSERT INTO V_Type (V_Type)
     INSERT INTO V_StorageList (MediaID,StorageMediaID)
 	VALUES(4,20);
     
-    INSERT INTO V_StorageList (MediaID,StorageMediaID)
-	VALUES(4,23);
-    
     INSERT INTO V_MediaList (MediaID,StorageListID,RentedFrom,RentedTo)
 	VALUES(4,4,null, null);
     
     /*_____________________________________________GAMES_______________________________________________*/
     
    
-
+	INSERT INTO V_Media (Title,Description,Image,FSK,MediaList,V_Type)
+	VALUES('Pac-Man',
+		   'Die Spielfigur Pac-Man muss Punkte in einem Labyrinth fressen,
+           während sie von Gespenstern verfolgt wird. Frisst man eine „Kraftpille“, 
+           kann man für eine gewisse Zeit umgekehrt selbst die (nun blau eingefärbten)
+           Gespenster verfolgen. Manchmal erscheint auch eine Kirsche oder ein anderes 
+           Symbol im Spielfeld, das dem Spieler Extrapunkte einbringt, wenn man es frisst. 
+           Wenn man das Symbol nicht frisst, verschwindet es nach einiger Zeit wieder. Sind alle 
+           Punkte gefressen, gelangt man in den nächsten Level. Dieser unterscheidet sich vom vorigen 
+           im Wesentlichen nur durch die höhere Spielgeschwindigkeit (in den niedrigeren Leveln auch durch 
+           ein verändertes Gegnerverhalten). Die Steuerung erfolgt per Joystick.',
+			null,
+            12,
+            5,
+            'Playstation 3');
+    
+    INSERT INTO V_StorageMedia (StorageShortcut,Title)
+	VALUES('BluRay','Pac-Man');
+    
+    INSERT INTO V_StorageList (MediaID,StorageMediaID)
+	VALUES(5,21);
+    
+    INSERT INTO V_MediaList (MediaID,StorageListID,RentedFrom,RentedTo)
+	VALUES(5,5,null, null);
 
  
