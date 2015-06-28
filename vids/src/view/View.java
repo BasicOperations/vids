@@ -7,17 +7,34 @@ import beans.Medium;
 
 public class View {
 	LinkedList <Medium> mediaList;
+	Filter filter;
 	public View(Filter filter, LinkedList<Medium> mediaList){
 		this.mediaList = mediaList;
+		this.filter = filter;
 	}
 	
-	public String printAllMedia(){
+	public String printAllMedia(boolean filtered){
 		Iterator<Medium> i = mediaList.iterator();
 		Medium medium;
 		String printString = "";
 		while(i.hasNext()){
 			medium = i.next();
-			printString += "<div class=\"Medium\">" +
+			if(filtered){
+				if(filter.check(medium)){
+					printString += "<div class=\"Medium\">" +
+								  medium.getID() +
+								  " " +
+								  medium.getTitle() +
+								  " " +
+								  medium.getFsk() +
+								  " " +
+								  medium.getV_Type() +
+								  
+								  "</div class=\"Medium\">";
+				}
+			}
+			else{
+				printString += "<div class=\"Medium\">" +
 						  medium.getID() +
 						  " " +
 						  medium.getTitle() +
@@ -26,8 +43,10 @@ public class View {
 						  " " +
 						  medium.getV_Type() +
 						  
-						  "</div class=\"Medium\">";	
+						  "</div class=\"Medium\">";
+			}
 		}
+			
 		return printString;
 	}
 	
