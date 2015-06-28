@@ -42,7 +42,7 @@ public class ViewController extends HttpServlet {
 			fsk = Integer.parseInt(request.getParameter("FSK"));
 		//String title = request.getParameter("Name");
 		LinkedList <Medium> mediaList = mediacontroller.getMediaList(); //get MediaList from MediaController
-		//TODO get Filter from Request
+		//get Filter from Request
 		Filter filter = new Filter();
 		if(title != null){
 			filter.setTitle(title);

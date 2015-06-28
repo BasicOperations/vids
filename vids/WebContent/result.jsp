@@ -51,7 +51,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-xs-3">
+				<!-- <div class="col-xs-3">
 					Medium:
 					<div class="dropdown">
 						<select name="Medium">
@@ -60,7 +60,7 @@
 							<option value="DVD">DVD</option>
 						</select>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-xs-3">
 					Name:
 					<div>
