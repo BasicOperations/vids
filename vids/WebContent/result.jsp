@@ -1,0 +1,35 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<!--Modifiziertes Theme-->
+<link rel="stylesheet" href="css/stylesheet.css">
+<meta name="author" content="Hendrik Toelstede">
+<title>Ergebnis!</title>
+</head>
+<body>
+	<div class="container">
+		<header class="page-header">
+			<h1>
+				VI/DS <small>Video Info/Data Service</small>
+			</h1>
+		</header>
+	</div>
+	<div class="container">
+		<footer class="navbar-fixed-bottom">
+			<ul class="links muted">
+				<li><a href=index.html>Zurück zur Übersicht</a></li>
+				<li>&middot;</li>
+				<li><a href="impressum.html">Impressum</a></li>
+				<li>&middot;</li>
+				<li><a href="mailto:hendrik.toelstede@mail.de?subject=Kontakt">Kontakt</a></li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>
