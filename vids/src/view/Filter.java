@@ -35,12 +35,14 @@ public class Filter {
 
 	
 	public Filter(){
-		
+		title = "";
+		v_Type = "all";
+		FSK = 0;
 	}
 	
 	public boolean check(Medium medium){
 		if(!medium.getTitle().equals(title)){
-			if(!title.equals("all"))
+			if(!title.equals(""))
 				return false;
 		}
 		else if(!medium.getV_Type().equals(v_Type)){

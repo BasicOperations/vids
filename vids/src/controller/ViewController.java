@@ -2,7 +2,7 @@ package controller;
 
 import java.util.LinkedList;
 
-import view.View;
+import view.*;
 import beans.Medium;
 
 import java.io.IOException;
@@ -35,9 +35,25 @@ public class ViewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String title = request.getParameter("Name");
+		String v_Type = request.getParameter("Typ");
+		int fsk = 0;
+		if(request.getParameter("FSK") != null)
+			fsk = Integer.parseInt(request.getParameter("FSK"));
+		//String title = request.getParameter("Name");
 		LinkedList <Medium> mediaList = mediacontroller.getMediaList(); //get MediaList from MediaController
 		//TODO get Filter from Request
-		View v=new View(null, mediaList); //View Class filters the list
+		Filter filter = new Filter();
+		if(title != null){
+			filter.setTitle(title);
+		}
+		filter.setV_Type(v_Type);
+		filter.setFSK(fsk);
+		
+		System.out.println(title + " " + v_Type + " " + fsk );
+		
+
+		View v=new View(filter, mediaList); //View Class filters the list
 		request.setAttribute("View", v); //Object with filteredList in Request
 		RequestDispatcher view;
 		view = request.getRequestDispatcher("result.jsp");
