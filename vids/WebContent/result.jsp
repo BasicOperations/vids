@@ -19,7 +19,6 @@
 <body>
 	<%
 		View v = (View) request.getAttribute("View");
-		//out.write(v.printMedium());
 	%>
 	<div class="container">
 		<header class="page-header">
@@ -88,8 +87,9 @@
 				</tr>
 			</thead>
 			<tbody>
-			<tr>
-			</tr>
+			<%
+				out.write(v.printAllMedia(false));
+			%>
 			</tbody>
 		</table>
 	</div>

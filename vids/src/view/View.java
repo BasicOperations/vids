@@ -21,29 +21,37 @@ public class View {
 			medium = i.next();
 			if(filtered){
 				if(filter.check(medium)){
-					printString += "<div class=\"Medium\">" +
+					printString += "<tr>" +
+								  "<td>" +
 								  medium.getID() +
-								  " " +
+								  "</td>" +
+								  "<td>" +
 								  medium.getTitle() +
-								  " " +
+								  "</td>" +
+								  "<td>" +
 								  medium.getFsk() +
-								  " " +
+								  "</td>" +
+								  "<td>" +
 								  medium.getV_Type() +
-								  
-								  "</div class=\"Medium\">";
+								  "</td>" +
+								  "</tr>";
 				}
 			}
 			else{
-				printString += "<div class=\"Medium\">" +
+				printString += "<tr>" +
+						  "<td>" +
 						  medium.getID() +
-						  " " +
+						  "</td>" +
+						  "<td>" +
 						  medium.getTitle() +
-						  " " +
+						  "</td>" +
+						  "<td>" +
 						  medium.getFsk() +
-						  " " +
+						  "</td>" +
+						  "<td>" +
 						  medium.getV_Type() +
-						  
-						  "</div class=\"Medium\">";
+						  "</td>" +
+						  "</tr>";
 			}
 		}
 			
