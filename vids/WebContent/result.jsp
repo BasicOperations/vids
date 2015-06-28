@@ -34,9 +34,10 @@
 					<div class="dropdown">
 						<select name="Typ">
 							<option value="all" selected="selected">Alle</option>
-							<option value="movie">Filme</option>
-							<option value="series">Serien</option>
-							<option value="ps3">PS3</option>
+							<option value="Movie">Filme</option>
+							<option value="Series">Serien</option>
+							<option value="Playstation 3">Playstation 3</option>
+							<option value="XBox 360">XBox 360</option>
 						</select>
 					</div>
 				</div>
