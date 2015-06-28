@@ -80,6 +80,7 @@ public class DatabaseController extends Controller{
 				medium.setTitle(allMedia.getString("Title"));
 				medium.setDescription(allMedia.getString("Description"));
 				medium.setFsk(allMedia.getInt("FSK"));
+				medium.setV_Type(allMedia.getString("V_Type"));
 				mediaList.add(medium);
 			}
 		} catch (SQLException e) {

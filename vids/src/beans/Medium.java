@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Medium {
 	private int id;
+	private String v_Type;
 	private String title;
 	private String description;
 	private byte[] image;
@@ -12,6 +13,14 @@ public class Medium {
 	
 	public Medium(){
 		
+	}
+	
+	public String getV_Type(){
+		return v_Type;
+	}
+	
+	public void setV_Type(String v_Type){
+		this.v_Type = v_Type;
 	}
 		
 	public int getID(){
