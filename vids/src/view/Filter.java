@@ -41,19 +41,29 @@ public class Filter {
 	}
 	
 	public boolean check(Medium medium){
-		if(!medium.getTitle().equals(title)){
-			if(!title.equals(""))
-				return false;
-		}
-		else if(!medium.getV_Type().equals(v_Type)){
-			if(!v_Type.equals("all"))
-				return false;
-		}
-		else if(medium.getFsk() != FSK){
-			if(FSK != 0)
-				return false;
-		}
 		
+		//int[] test = new int[3];
+		
+		//test[0] = test[1] = test[2] = 1;
+		if(!medium.getTitle().equals(title)){
+			if(!title.equals("")){
+				return false;
+			}
+				
+		}
+		if(!medium.getV_Type().equals(v_Type)){
+			if(!v_Type.equals("all")){
+				return false;
+			}
+				
+		}
+		if(medium.getFsk() != FSK){
+			if(FSK != 0){
+				return false;
+			}
+				
+		}
+
 		return true;
 	}
 	

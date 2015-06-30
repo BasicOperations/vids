@@ -47,10 +47,12 @@ public class ViewController extends HttpServlet {
 		if(title != null){
 			filter.setTitle(title);
 		}
-		filter.setV_Type(v_Type);
+		if(v_Type != null){
+			filter.setV_Type(v_Type);
+		}
 		filter.setFSK(fsk);
 		
-		System.out.println(title + " " + v_Type + " " + fsk );
+		System.out.println("title " + title + " type " + v_Type + " fsk " + fsk );
 		
 
 		View v=new View(filter, mediaList); //View Class filters the list

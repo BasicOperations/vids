@@ -88,7 +88,7 @@
 			</thead>
 			<tbody>
 			<%
-				out.write(v.printAllMedia(false));
+				out.write(v.printAllMedia(true));
 			%>
 			</tbody>
 		</table>
